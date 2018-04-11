@@ -22,12 +22,15 @@ class PageApiController extends Controller
         //]);
 
         //return new response('Let\'s do this!');
-	$data = json_decode($request->getContent(), true);
+	    $data = json_decode($request->getContent(), true);
         $page = new Page();
-        $page->setTitle($data['title']);
-        $page->setContent($data['content']);
+        $form = $this->createForm(new PageType(), $programmer);
+        //$page->setTitle($data['title']);
+        //$page->setContent($data['content']);
+        $form->submit($data);
 
-	$em = $this->getDoctrine()->getManager();
+
+	    $em = $this->getDoctrine()->getManager();
         $em->persist($page);
         $em->flush();
 
