@@ -25,7 +25,7 @@ class PageApiController extends Controller
         //return new response('Let\'s do this!');
 	    $data = json_decode($request->getContent(), true);
         $page = new Page();
-        $form = $this->createForm('Page', $page);
+        $form = $this->createForm(PageType::class, $page);
         //$page->setTitle($data['title']);
         //$page->setContent($data['content']);
         $form->submit($data);
