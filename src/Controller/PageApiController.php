@@ -35,7 +35,10 @@ class PageApiController extends Controller
         $em->persist($page);
         $em->flush();
 
-        return new Response('It worked. Believe me - I\'m an API');
+        $response = new Response('It worked. Believe me - I\'m an API', 201);
+        $response->headers->set('Location', '/some/programmer/url');
+
+        return $response;
         
     }
 }
