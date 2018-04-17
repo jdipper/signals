@@ -9,36 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Page;
 use App\Form\PageType;
+use FOS\RestBundle\Controller\FOSRestController;
 
 class PageApiController extends Controller
 {
-    /**
-     * @Route("/page/api", name="page_api")
-     * @Method("POST")
-     */
-    public function newAction(Request $request)
+
+    public function getPagesAction()
     {
-        //return $this->render('page_api/index.html.twig', [
-        //    'controller_name' => 'PageApiController',
-        //]);
+        $data = array("hello" => "world");
+        $view = $this->view($data);
+        return $this->handleView($view);
+    } // "get_users"            [GET] /users
 
-        //return new response('Let\'s do this!');
-	    $data = json_decode($request->getContent(), true);
-        $page = new Page();
-        $form = $this->createForm(PageType::class, $page);
-        //$page->setTitle($data['title']);
-        //$page->setContent($data['content']);
-        $form->submit($data);
-
-
-	    $em = $this->getDoctrine()->getManager();
-        $em->persist($page);
-        $em->flush();
-
-        $response = new Response('It worked. Believe me - I\'m an API', 201);
-        $response->headers->set('Location', '/some/programmer/url');
-
-        return $response;
-        
-    }
 }
