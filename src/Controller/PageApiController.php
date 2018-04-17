@@ -15,15 +15,20 @@ use FOS\RestBundle\Controller\Annotations\RouteResource;
 
 /**
  * @RouteResource(
- *     "Page",
- *     pluralize=true
+ *     "Page"
  * )
  */
-
-class PageApiController extends FOSRestController
+class PageApiController extends FOSRestController implements ClassResourceInterface
 {
 
-    public function getPagesAction()
+    public function cgetAction()
+    {
+        $data = array("hello" => "world");
+        $view = $this->view($data);
+        return $this->handleView($view);
+    } // "get_users"            [GET] /users
+
+    public function getAction($id)
     {
         $data = array("hello" => "world");
         $view = $this->view($data);

@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+pages:
+    type:     rest
+    host:     10.2.1.130
+    resource: App\Controller\PageApiController
