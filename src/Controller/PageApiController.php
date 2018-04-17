@@ -10,10 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Page;
 use App\Form\PageType;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations\RouteResource;
 
 
 /**
- * @Rest\RouteResource(
+ * @RouteResource(
  *     "Page",
  *     pluralize=true
  * )
