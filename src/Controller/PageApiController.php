@@ -13,6 +13,8 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 
+use App\Repository\PageRepository;
+
 /**
  * @RouteResource(
  *     "Page",
@@ -22,9 +24,10 @@ use FOS\RestBundle\Routing\ClassResourceInterface;
 class PageApiController extends FOSRestController implements ClassResourceInterface
 {
 
-    public function cgetAction()
+    public function cgetAction(PageRepository $pageRepository)
     {
-        $data = array("hello" => "world");
+        $data = $pageRepository->findAll();
+        //$data = array("hello" => "world");
         $view = $this->view($data);
         return $this->handleView($view);
     } // "get_users"            [GET] /users
