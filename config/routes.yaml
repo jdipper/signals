@@ -5,4 +5,4 @@
 pages:
     type:     rest
     host:     10.2.1.130
-    resource: src\Controller\PageApiController.php
+    resource: App\Controller\PageApiController.php
