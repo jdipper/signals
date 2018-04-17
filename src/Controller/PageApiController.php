@@ -24,7 +24,7 @@ use App\Repository\PageRepository;
 class PageApiController extends FOSRestController implements ClassResourceInterface
 {
 
-    public function cgetAction(PageRepository $pageRepository)
+    public function cgetAction(PageRepository $pageRepository) : Response
     {
         $data = $pageRepository->findAll();
         //$data = array("hello" => "world");
