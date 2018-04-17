@@ -11,7 +11,7 @@ use App\Entity\Page;
 use App\Form\PageType;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
-user FOS\RestBundle\Routing\ClassResourceInterface;
+use FOS\RestBundle\Routing\ClassResourceInterface;
 
 /**
  * @RouteResource(
