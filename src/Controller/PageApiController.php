@@ -36,7 +36,7 @@ class PageApiController extends FOSRestController implements ClassResourceInterf
     public function getAction($id)
     {
         $repository = $this->getDoctrine()->getRepository(Page::class);
-        $data = $repository->findBy($id);
+        $data = $repository->find($id);
         $view = $this->view($data);
         return $this->handleView($view);
     } // "get_users"            [GET] /users
