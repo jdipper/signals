@@ -11,7 +11,7 @@ use App\Entity\Page;
 use App\Form\PageType;
 use FOS\RestBundle\Controller\FOSRestController;
 
-class PageApiController extends Controller
+class PageApiController extends FOSRestController
 {
 
     public function getPagesAction()
