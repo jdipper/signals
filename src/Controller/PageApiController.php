@@ -11,6 +11,14 @@ use App\Entity\Page;
 use App\Form\PageType;
 use FOS\RestBundle\Controller\FOSRestController;
 
+
+/**
+ * @Rest\RouteResource(
+ *     "Page",
+ *     pluralize=true
+ * )
+ */
+
 class PageApiController extends FOSRestController
 {
 
