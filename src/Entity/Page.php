@@ -26,6 +26,11 @@ class Page
      */
     private $content;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $header;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Page
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getHeader(): ?bool
+    {
+        return $this->header;
+    }
+
+    public function setHeader(bool $header): self
+    {
+        $this->header = $header;
 
         return $this;
     }
