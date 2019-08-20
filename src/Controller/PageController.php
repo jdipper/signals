@@ -51,7 +51,7 @@ class PageController extends AbstractController
     /**
      * @Route("/{id}", name="page_show", methods={"GET"})
      */
-    public function show(Page $page): Response
+    public function show(Page $page, \Swift_Mailer $mailer): Response
     {
         return $this->render('page/show.html.twig', [
             'page' => $page,
